@@ -15,8 +15,8 @@ def subtract(m, n):
 def divide(m, n):
     result = 0
     negativeResult = m > 0 and n < 0 or m < 0 and n > 0
-    nAbs = abs(n)
     mAbs = abs(m)
+    nAbs = abs(n)
     if n != 0:
         while (mAbs >= nAbs):
             mAbs -= nAbs
@@ -39,6 +39,8 @@ def multiply(m, n):
 
 
 def MCD(m, n):
-    while n != 0:
-        m, n = n, m % n
-    return m
+    mAbs = abs(m)
+    nAbs = abs(n)
+    while nAbs != 0:
+        mAbs, nAbs = nAbs, mAbs % nAbs
+    return mAbs
