@@ -1,9 +1,9 @@
 def sum(m, n):
     if n < 0:
-        for x in range(abs(n)):
+        for i in range(abs(n)):
             m -= 1
     else:
-        for x in range(0, n):
+        for i in range(0, n):
             m += 1
     return m
 
@@ -13,26 +13,32 @@ def subtract(m, n):
 
 
 def divide(m, n):
-    count = 0
+    result = 0
     negativeResult = m > 0 and n < 0 or m < 0 and n > 0
-    nabs = abs(n)
-    mabs = abs(m)
+    nAbs = abs(n)
+    mAbs = abs(m)
     if n != 0:
-        while (mabs >= nabs):
-            mabs -= nabs
-            count += 1
+        while (mAbs >= nAbs):
+            mAbs -= nAbs
+            result += 1
         if negativeResult:
-            count = -count
+            result = -result
     else:
         raise ZeroDivisionError()
-    return count
+    return result
 
 
 def multiply(m, n):
-    negativeResult = m > 0 and n < 0 or m < 0 and n > 0
     result = 0
-    for x in range(abs(n)):
+    negativeResult = m > 0 and n < 0 or m < 0 and n > 0
+    for i in range(abs(n)):
         result += abs(m)
     if negativeResult:
         result = -result
     return result
+
+
+def MCD(m, n):
+    while n != 0:
+        m, n = n, m % n
+    return m
