@@ -10,3 +10,12 @@ class FooCalculator:
 
     def divide(self, m, n):
         return c.divide(m, n)
+    
+    def multyply(self, m,n):
+        return c.multiply(m,n)
+    
+    def MCD(self, m,n):
+        return c.MCD(m,n)
+
+    def subtract(self, m,n):
+        return c.subtract(m,n)
